@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dagestan Board</title>
+  <link rel="stylesheet" href="stile.css">
+</head>
+<body>
+
+  <!-- Accesso -->
+  <section id="accesso" class="accesso">
+    <form id="formAccesso" class="scheda-accesso">
+      <h1>Dagestan Board</h1>
+      <label>Nome utente <input id="nomeUtente" required></label>
+      <label>Password <input id="password" type="password" required></label>
+      <p id="erroreAccesso" class="errore"></p>
+      <button class="bottone primario" type="submit" id="bottoneAccedi">Accedi</button>
+      <button class="bottone collegamento" type="button" id="cambiaModalita">Non hai un account? Registrati</button>
+    </form>
+  </section>
+
+  <!-- Applicazione -->
+  <div id="applicazione" hidden>
+    <header class="barra">
+      <h1>Dagestan Board</h1>
+      <button class="scheda attiva" id="schedaBacheca">Bacheca</button>
+      <button class="scheda" id="schedaCalendario">Calendario</button>
+      <button class="scheda" id="schedaChat">Chat</button>
+      <div class="strumenti">
+        <input id="cerca" type="search" placeholder="Cerca">
+        <select id="filtroPriorita">
+          <option value="">Tutte le priorità</option>
+          <option value="alta">Alta</option>
+          <option value="media">Media</option>
+          <option value="bassa">Bassa</option>
+        </select>
+        <select id="filtroTipo">
+          <option value="">Tutti i tipi</option>
+          <option value="con-scadenza">Con scadenza</option>
+          <option value="atemporale">Atemporali</option>
+        </select>
+        <button class="bottone primario" id="nuovaAttivita">+ Nuova attività</button>
+        <button class="bottone" id="attivaNotifiche" hidden>Attiva notifiche</button>
+        <span id="nomeUtenteCorrente" class="secondario"></span>
+        <button class="bottone" id="esci">Esci</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="vistaBacheca" class="bacheca"></div>
+
+      <div id="vistaCalendario" hidden>
+        <div class="intestazione-calendario">
+          <button class="bottone" id="mesePrecedente">&lt;</button>
+          <h2 id="titoloMese"></h2>
+          <button class="bottone" id="meseSuccessivo">&gt;</button>
+        </div>
+        <div id="grigliaCalendario" class="griglia-calendario"></div>
+        <p class="secondario">Le attività atemporali non compaiono nel calendario.</p>
+      </div>
+
+      <div id="vistaChat" class="chat" hidden>
+        <ul id="elencoContatti" class="contatti"></ul>
+        <div class="conversazione">
+          <h2 id="titoloChat"></h2>
+          <ul id="elencoMessaggi" class="messaggi"></ul>
+          <form id="formChat" class="riga">
+            <input id="campoMessaggio" placeholder="Scrivi un messaggio" autocomplete="off">
+            <button class="bottone primario" type="submit">Invia</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Finestra attività -->
+  <dialog id="finestraAttivita">
+    <form id="formAttivita" novalidate>
+      <h2 id="titoloFinestra">Nuova attività</h2>
+
+      <label>Descrizione *
+        <textarea id="campoDescrizione" rows="3"></textarea>
+      </label>
+      <label>Assegnata a *
+        <input id="campoAssegnatario" list="elencoUtenti">
+        <datalist id="elencoUtenti"></datalist>
+      </label>
+
+      <div class="riga">
+        <label>Stato <select id="campoStato"></select></label>
+        <label>Priorità
+          <select id="campoPriorita">
+            <option value="bassa">Bassa</option>
+            <option value="media">Media</option>
+            <option value="alta">Alta</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="riga">
+        <label>Scadenza (vuota = atemporale)
+          <input id="campoScadenza" type="datetime-local">
+        </label>
+        <label>Promemoria
+          <select id="campoPromemoria">
+            <option value="">Nessuno</option>
+            <option value="0">Alla scadenza</option>
+            <option value="15">15 minuti prima</option>
+            <option value="60">1 ora prima</option>
+            <option value="1440">1 giorno prima</option>
+          </select>
+        </label>
+      </div>
+
+      <label>Colore <input id="campoColore" type="color"></label>
+
+      <p id="erroreForm" class="errore"></p>
+
+      <div id="sezioneCommenti">
+        <h3>Commenti</h3>
+        <ul id="elencoCommenti" class="commenti"></ul>
+        <div class="riga">
+          <input id="campoCommento" placeholder="Scrivi un commento">
+          <button type="button" class="bottone" id="inviaCommento">Invia</button>
+        </div>
+      </div>
+
+      <div class="azioni">
+        <button type="button" class="bottone pericolo" id="bottoneElimina">Elimina</button>
+        <button type="button" class="bottone" id="annulla">Annulla</button>
+        <button type="submit" class="bottone primario">Salva</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="avvisi"></div>
+
+  <script src="js/dati.js"></script>
+  <script src="js/accesso.js"></script>
+  <script src="js/bacheca.js"></script>
+  <script src="js/calendario.js"></script>
+  <script src="js/chat.js"></script>
+  <script src="js/promemoria.js"></script>
+</body>
+</html>
