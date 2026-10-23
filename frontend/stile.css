@@ -1,0 +1,96 @@
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body { margin: 0; font-family: system-ui, sans-serif; font-size: 15px; background: #f1f3f8; color: #1d2433; }
+h1, h2, h3 { margin: 0; }
+.secondario { color: #6b7488; font-size: 13px; }
+.errore { color: #dc2626; font-size: 13px; min-height: 1em; }
+
+input, select, textarea, .bottone { font: inherit; padding: 8px; border: 1px solid #dde1ea; border-radius: 6px; background: #fff; }
+label { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; font-size: 13px; }
+.bottone { cursor: pointer; }
+.bottone.primario { background: #4f46e5; color: #fff; border-color: #4f46e5; }
+.bottone.pericolo { color: #dc2626; border-color: #dc2626; }
+.bottone.collegamento { border: none; background: none; color: #4f46e5; }
+
+/* Accesso */
+.accesso { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 16px; }
+.scheda-accesso { background: #fff; padding: 24px; border-radius: 12px; width: 100%; max-width: 340px; display: flex; flex-direction: column; gap: 6px; }
+
+/* Barra in alto */
+.barra { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 16px; background: #fff; border-bottom: 1px solid #dde1ea; }
+.scheda { border: none; background: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font: inherit; }
+.scheda.attiva { background: #4f46e5; color: #fff; }
+.strumenti { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-left: auto; }
+main { padding: 16px; }
+
+/* Bacheca */
+.bacheca { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; align-items: start; }
+.colonna { background: #e6e9f0; border: 2px solid transparent; border-radius: 10px; padding: 10px; min-height: 150px; }
+.colonna.sopra { border-color: #4f46e5; }
+.colonna h2 { font-size: 16px; margin-bottom: 10px; }
+
+.attivita { background: #fff; border: 1px solid #dde1ea; border-left: 6px solid; border-radius: 8px; padding: 10px; margin-bottom: 8px; cursor: pointer; }
+.attivita p { margin: 0 0 8px; white-space: pre-wrap; word-break: break-word; }
+.attivita small { display: inline-block; margin-right: 6px; }
+
+/* Con scadenza: bordo pieno. Atemporale: bordo tratteggiato e sfondo grigio */
+.attivita.con-scadenza { border-top-width: 3px; }
+.attivita.atemporale { border-style: dashed; border-left-style: solid; background: #f8f9fb; }
+.attivita.scaduta { outline: 2px solid #dc2626; }
+
+.etichetta { padding: 2px 8px; border-radius: 10px; font-size: 12px; }
+.etichetta.alta { background: #dc2626; color: #fff; }
+.etichetta.media { background: #f59e0b; }
+.etichetta.bassa { background: #16a34a; color: #fff; }
+.etichetta.scaduta { color: #dc2626; }
+
+.sposta { display: none; margin-top: 6px; gap: 6px; }
+
+/* Calendario */
+.intestazione-calendario { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.intestazione-calendario h2 { flex: 1; text-align: center; text-transform: capitalize; }
+.griglia-calendario { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.giorno-settimana { text-align: center; font-size: 12px; color: #6b7488; }
+.giorno { background: #fff; border: 1px solid #dde1ea; border-radius: 6px; min-height: 90px; padding: 4px; font-size: 12px; overflow: hidden; cursor: pointer; }
+.giorno.altro-mese { opacity: .4; }
+.giorno.oggi { border-color: #4f46e5; }
+.evento { color: #fff; border-radius: 4px; padding: 2px 4px; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Chat */
+.chat { display: grid; grid-template-columns: 200px 1fr; gap: 14px; }
+.contatti { list-style: none; margin: 0; padding: 0; }
+.contatti li { background: #fff; border: 1px solid #dde1ea; border-radius: 6px; padding: 8px; margin-bottom: 4px; cursor: pointer; }
+.contatti li.attivo { background: #4f46e5; color: #fff; }
+.conversazione { background: #fff; border: 1px solid #dde1ea; border-radius: 10px; padding: 12px; }
+.messaggi { list-style: none; padding: 0; height: 50vh; overflow: auto; display: flex; flex-direction: column; gap: 6px; }
+.messaggi li { background: #f1f3f8; border-radius: 8px; padding: 6px 10px; max-width: 75%; align-self: flex-start; word-break: break-word; }
+.messaggi li.mio { background: #e0e7ff; align-self: flex-end; }
+.messaggi small { display: block; }
+
+/* Finestra attività */
+dialog { border: none; border-radius: 12px; padding: 20px; width: min(500px, 94vw); }
+dialog h2 { margin-bottom: 12px; }
+.riga { display: flex; gap: 10px; }
+.riga > * { flex: 1; }
+.commenti { list-style: none; padding: 0; max-height: 150px; overflow: auto; }
+.commenti li { background: #f1f3f8; border-radius: 6px; padding: 6px; margin-bottom: 4px; font-size: 13px; }
+.azioni { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+.azioni .pericolo { margin-right: auto; }
+
+/* Promemoria */
+#avvisi { position: fixed; right: 12px; bottom: 12px; }
+.avviso { background: #1d2433; color: #fff; padding: 10px 14px; border-radius: 8px; margin-top: 8px; max-width: 300px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .bacheca { grid-template-columns: 1fr; }
+  .chat { grid-template-columns: 1fr; }
+  .strumenti { margin-left: 0; }
+  .sposta { display: flex; }
+  .giorno { min-height: 50px; }
+  .evento { height: 6px; padding: 0; font-size: 0; }
+}
+@media (max-width: 480px) {
+  .riga { flex-direction: column; gap: 0; }
+}
