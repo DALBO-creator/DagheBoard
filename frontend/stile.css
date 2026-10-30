@@ -9,9 +9,9 @@ h1, h2, h3 { margin: 0; }
 input, select, textarea, .bottone { font: inherit; padding: 8px; border: 1px solid #dde1ea; border-radius: 6px; background: #fff; }
 label { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; font-size: 13px; }
 .bottone { cursor: pointer; }
-.bottone.primario { background: #4f46e5; color: #fff; border-color: #4f46e5; }
+.bottone.primario { background: #389935f8; color: #fff; border-color: #389935f8; }
 .bottone.pericolo { color: #dc2626; border-color: #dc2626; }
-.bottone.collegamento { border: none; background: none; color: #4f46e5; }
+.bottone.collegamento { border: none; background: none; color: #389935f8; }
 
 /* Accesso */
 .accesso { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 16px; }
@@ -20,14 +20,14 @@ label { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; fo
 /* Barra in alto */
 .barra { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 16px; background: #fff; border-bottom: 1px solid #dde1ea; }
 .scheda { border: none; background: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font: inherit; }
-.scheda.attiva { background: #4f46e5; color: #fff; }
+.scheda.attiva { background: #389935f8; color: #fff; }
 .strumenti { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-left: auto; }
 main { padding: 16px; }
 
 /* Bacheca */
 .bacheca { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; align-items: start; }
-.colonna { background: #e6e9f0; border: 2px solid transparent; border-radius: 10px; padding: 10px; min-height: 150px; }
-.colonna.sopra { border-color: #4f46e5; }
+.colonna { background: #83b5dd42; border: 2px solid transparent; border-radius: 10px; padding: 10px; min-height: 150px; }
+.colonna.sopra { border-color: #389935f8; }
 .colonna h2 { font-size: 16px; margin-bottom: 10px; }
 
 .attivita { background: #fff; border: 1px solid #dde1ea; border-left: 6px solid; border-radius: 8px; padding: 10px; margin-bottom: 8px; cursor: pointer; }
@@ -54,14 +54,14 @@ main { padding: 16px; }
 .giorno-settimana { text-align: center; font-size: 12px; color: #6b7488; }
 .giorno { background: #fff; border: 1px solid #dde1ea; border-radius: 6px; min-height: 90px; padding: 4px; font-size: 12px; overflow: hidden; cursor: pointer; }
 .giorno.altro-mese { opacity: .4; }
-.giorno.oggi { border-color: #4f46e5; }
+.giorno.oggi { border-color: #389935f8; }
 .evento { color: #fff; border-radius: 4px; padding: 2px 4px; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* Chat */
 .chat { display: grid; grid-template-columns: 200px 1fr; gap: 14px; }
 .contatti { list-style: none; margin: 0; padding: 0; }
 .contatti li { background: #fff; border: 1px solid #dde1ea; border-radius: 6px; padding: 8px; margin-bottom: 4px; cursor: pointer; }
-.contatti li.attivo { background: #4f46e5; color: #fff; }
+.contatti li.attivo { background: #389935f8; color: #fff; }
 .conversazione { background: #fff; border: 1px solid #dde1ea; border-radius: 10px; padding: 12px; }
 .messaggi { list-style: none; padding: 0; height: 50vh; overflow: auto; display: flex; flex-direction: column; gap: 6px; }
 .messaggi li { background: #f1f3f8; border-radius: 8px; padding: 6px 10px; max-width: 75%; align-self: flex-start; word-break: break-word; }

@@ -114,7 +114,7 @@ function spostaAttivita(id, stato) {
 
 function apriFinestra(id, scadenza) {
   idInModifica = id || null;
-  const a = trovaAttivita(id) || { assegnatario: utenteCorrente(), stato: 'da-fare', priorita: 'media', colore: '#4f46e5', scadenza: scadenza };
+  const a = trovaAttivita(id) || { assegnatario: utenteCorrente(), stato: 'da-fare', priorita: 'media', colore: '#83b5dd42', scadenza: scadenza };
 
   $('titoloFinestra').textContent = id ? 'Modifica attività' : 'Nuova attività';
   $('campoDescrizione').value = a.descrizione || '';
